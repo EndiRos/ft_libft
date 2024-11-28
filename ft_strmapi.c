@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 14:14:15 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/11/28 15:08:46 by enetxeba         ###   ########.fr       */
+/*   Created: 2024/11/28 15:12:06 by enetxeba          #+#    #+#             */
+/*   Updated: 2024/11/28 15:23:59 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)
 {
 	size_t	len;
-	size_t	ini;
-	size_t	end;
-	size_t	c;
 	char	*ret;
+	size_t	x;
 
-	len = ft_strlen(s1);
-	ini = 0;
-	end = len;
-	while (s1[ini] != '\0' && ft_strchr(set, s1[ini]))
-		ini++;
-	while (end > ini && ft_strchr(set, s1[end - 1]))
-		end--;
-	return (ft_substr(s1, ini, (end - ini)));
+	len = ft_strlen(s);
+	ret = ft_calloc(sizeof(char),len + 1);
+	if (!ret)
+		return (NULL);
+	x = 0;
+	while (x < len)
+	{
+		ret[x] = f(x , s[x]);
+		x++;
+	}
+	ret[x] = '\0';
+	return (ret);
 }
