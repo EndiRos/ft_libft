@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:57:17 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/11/27 09:13:29 by enetxeba         ###   ########.fr       */
+/*   Updated: 2024/11/29 13:38:13 by endika           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -28,6 +28,8 @@ int	ft_atoi(const char *nptr)
 		sign = -sign;
 		c++;
 	}
+	if (nptr[c] == '+')
+		c++;
 	while (ft_isdigit(nptr[c]))
 	{
 		num = num * 10 + (nptr[c] - '0');

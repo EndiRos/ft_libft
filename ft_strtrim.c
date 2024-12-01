@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:14:15 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/11/28 15:08:46 by enetxeba         ###   ########.fr       */
+/*   Updated: 2024/11/29 12:02:19 by endika           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	ini;
 	size_t	end;
-	size_t	c;
-	char	*ret;
 
 	len = ft_strlen(s1);
 	ini = 0;
