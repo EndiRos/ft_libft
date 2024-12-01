@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 10:44:43 by endika            #+#    #+#             */
-/*   Updated: 2024/12/01 12:46:42 by endika           ###   ########.fr       */
+/*   Created: 2024/12/01 12:43:07 by endika            #+#    #+#             */
+/*   Updated: 2024/12/01 19:00:50 by endika           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdlib.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*new_node_head;
-	t_list	*new_node;
-	t_list	*last_node;
-
 	while (lst)
 	{
-		new_node = ft_lstnew(f (lst->content));
-		if (!new_node)
-		{
-			ft_lstclear(&new_node_head, del);
-			return (NULL);
-		}
-		if (!new_node_head)
-		{
-			new_node_head = new_node;
-			last_node = new_node_head;
-		}
-		else
-		{
-			last_node->next = new_node;
-			last_node = new_node;
-		}
+		f(lst->content);
 		lst = lst->next;
 	}
-	return (new_node_head);
 }

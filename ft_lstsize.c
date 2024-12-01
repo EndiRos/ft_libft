@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 07:23:18 by endika            #+#    #+#             */
-/*   Updated: 2024/12/01 12:47:57 by endika           ###   ########.fr       */
+/*   Created: 2024/11/30 08:06:04 by endika            #+#    #+#             */
+/*   Updated: 2024/12/01 19:12:04 by endika           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdlib.h>
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*list_memb;
+	int		cnt;
 
-	list_memb = malloc (sizeof(t_list));
-	if (list_memb == NULL)
-		return (NULL);
-	list_memb->content = content;
-	list_memb->next = NULL;
-	return (list_memb);
+	cnt = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		cnt++;
+	}
+	return (cnt);
 }
