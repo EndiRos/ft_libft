@@ -6,7 +6,7 @@
 /*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:20:47 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/12/01 11:58:52 by endika           ###   ########.fr       */
+/*   Updated: 2024/12/01 13:39:58 by endika           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int				ft_isalpha(int str);
 int				ft_isascii(int c);
 int				ft_isdigit(int str);
 int				ft_isprint(int str);
+void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src,	size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *ptr, int value, size_t num);
