@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}", // Ejecutar el archivo generado por el task
+            "args": [], // Puedes agregar los argumentos necesarios aquí si los tienes
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}", // Directorio de trabajo donde está el archivo
+            "environment": [],
+            "externalConsole": false, // Puedes cambiar esto a `true` si prefieres usar la consola externa
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb", // Ruta del depurador (asegúrate de tener `gdb` instalado)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc build active file", // Llama a la tarea de compilación antes de iniciar la depuración
+            "miDebuggerArgs": "",
+            "logging": {
+                "moduleLoad": false,
+                "trace": false,
+                "engineLogging": false
+            },
+            "sourceFileMap": {
+                "/usr/include": "${workspaceFolder}/include"
+            },
+        }
+    ]
+}
