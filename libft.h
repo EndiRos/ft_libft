@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:20:47 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/12/01 18:59:45 by endika           ###   ########.fr       */
+/*   Updated: 2025/01/16 09:01:36 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void			ft_putnbr_fd(int n, int fd);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			*ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strrchr(const char *s, int c);
+unsigned int	ft_atoi_base(char *str, char *base);
+int				ft_find_char(char car, char *base);
 
 typedef struct s_list
 {
