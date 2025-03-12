@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: endika <endika@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enetxeba <enetxeba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:44:36 by enetxeba          #+#    #+#             */
-/*   Updated: 2024/11/29 12:02:19 by endika           ###   ########.fr       */
+/*   Updated: 2025/03/12 09:30:18 by enetxeba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	count;
 
+	if (!str)
+		return (0);
 	count = 0;
 	while (*str++ != '\0')
 		count++;
